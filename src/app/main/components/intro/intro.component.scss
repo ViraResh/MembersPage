@@ -1,0 +1,45 @@
+@import "~src/assets/styles/partials/base";
+
+.intro {
+  padding: 150px 0;
+  background-color: $background;
+  background-image: url("/assets/images/nswg-logo.svg");
+  background-size: 346px auto;
+  background-position: right 0 bottom 0;
+  background-repeat: no-repeat;
+  .intro__block {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:first-child {
+      color: #123454;
+      font-size: 35px;
+      font-weight: 700;
+      text-align: right;
+      padding: 53px 74px 53px 115px;
+      border-right: 5px solid rgba(255,204,50, 0.8);
+    }
+    &:last-child {
+      font-size: 24px;
+      letter-spacing: -0.24px;
+      padding: 57px 74px 65px 70px;
+    }
+    p {
+      &:first-child {
+        margin-bottom: 35px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .intro {
+    background-size: 60%;
+    .intro__block {
+      &:first-child, &:last-child {
+        padding: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}

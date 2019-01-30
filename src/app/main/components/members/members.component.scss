@@ -1,0 +1,181 @@
+@import "~src/assets/styles/partials/base";
+
+.members {
+  .container {
+    padding: 85px 0 73px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      color: #123454;
+      font-size: 38px;
+      font-weight: 300;
+      line-height: 43.97px;
+      padding-bottom: 13px;
+    }
+    img {
+      width: 100%;
+    }
+    .line-star {
+      margin-bottom: 74px;
+    }
+    .members__slider {
+      display: flex;
+      flex-direction: row;
+      flex-flow: nowrap;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding: 0 40px;
+      margin-bottom: 82px;
+      width: 100%;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 10px;
+        width: 14px;
+        height: 27px;
+        background: url("/assets/images/arrow.png") no-repeat center;
+        cursor: pointer;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        right: 10px;
+        width: 14px;
+        height: 27px;
+        background: url("/assets/images/arrow.png") no-repeat center;
+        transform: rotate(180deg);
+        cursor: pointer;
+      }
+      .member__slide {
+        height: 480px;
+        margin-right: 40px;
+        background-color: $background;
+        flex: 1 1 30%;
+        padding: 26px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        img {
+          align-self: center;
+          border-radius: 50%;
+          margin-bottom: 20px;
+          object-fit: cover;
+          width: 236px;
+          height: 236px;
+        }
+        h2 {
+          color: $dark-blue;
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 23px;
+          align-self: center;
+        }
+        p {
+          color: $dark-blue;
+          font-size: 22px;
+          font-weight: 300;
+          letter-spacing: 0.44px;
+        }
+        .description {
+          display: none;
+          padding-top: 21px;
+          color: $dark-blue;
+          font-size: 18px;
+          line-height: 22px;
+          font-weight: 300;
+          letter-spacing: 0.18px;
+        }
+        &:hover {
+          img {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+          }
+          p {
+            padding-bottom: 25px;
+            border-bottom: 1px solid $grey;
+            &:last-child {
+              border: none;
+            }
+          }
+          .description {
+            display: block;
+          }
+          cursor: pointer;
+          transition-delay: 0.5s;
+          background-color: $yellow;
+          -webkit-transition: background-color 0.5s ease-out;
+          -moz-transition: background-color 0.5s ease-out;
+          -o-transition: background-color 0.5s ease-out;
+          transition: background-color 0.5s ease-out;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .find-more {
+      max-width: 317px;
+      color: $grey-light;
+      font-size: 24px;
+      line-height: 30.76px;
+      letter-spacing: 1.05px;
+      padding: 19px 32px;
+      border-radius: 3px;
+      background-color: $dark-blue;
+      border: 2px solid $dark-blue;
+      &:hover {
+        transition: background-color 0.3s ease;
+        color: $dark-blue;
+        background-color: $grey-light;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .members {
+    .container {
+      .members__slider {
+        .member__slide {
+          &:nth-child(2) {
+            margin-right: 0;
+          }
+          &:nth-child(3) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .members {
+    .container {
+      .find-more {
+        width: 95%;
+      }
+      .members__slider {
+        flex-flow: wrap;
+        .member__slide {
+          margin-right: 0;
+          img {
+            transform: scale(0.8);
+          }
+          &:nth-child(2), &:nth-child(3) {
+            display: none;
+          }
+          &:first-child {
+            &:hover {
+              p {
+                max-height: 70%;
+                overflow: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
